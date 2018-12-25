@@ -22,18 +22,19 @@ object Lexer extends RegexParsers {
 
   /* Value keywords */
 
-  private def nullKeyWord = keywordParser("null", NULL)
   private def trueKeyWord= keywordParser("true", TRUE)
   private def falseKeyWord = keywordParser("false", FALSE)
 
   /* Type Keywords */
 
+
+  private def nullKeyWord = kewordWithCommasParser("null", NULL)
   private def boolKeyWord = kewordWithCommasParser("bool", BOOL_KEYWORD)
   private def intKeyWord = kewordWithCommasParser("int", INT_KEYWORD)
   private def longKeyWord = kewordWithCommasParser("long", LONG_KEYWORD)
   private def doubleKeyWord = kewordWithCommasParser("double", DOUBLE_KEYWORD)
   private def stringKeyWord = kewordWithCommasParser("string", STRING_KEYWORD)
-  private def byteKeyWord = kewordWithCommasParser("byte", BYTE_KEYWORD)
+  private def byteKeyWord = kewordWithCommasParser("bytes", BYTES_KEYWORD)
   private def enumKeyWord = kewordWithCommasParser("enum", ENUM_KEYWORD)
   private def recordKeyWord = kewordWithCommasParser("record", RECORD_KEYWORD)
   private def fixedKeyWord = kewordWithCommasParser("fixed", FIXED_KEYWORD)
@@ -61,8 +62,8 @@ object Lexer extends RegexParsers {
 
   /* Punctuation*/
 
-  private def openedBrace = keywordParser("(", OPENED_BRACE)
-  private def closedBrace = keywordParser(")", CLOSED_BRACE)
+  private def openedBrace = keywordParser("{", OPENED_BRACE)
+  private def closedBrace = keywordParser("}", CLOSED_BRACE)
   private def openedBracket = keywordParser("[", OPENED_BRACKET)
   private def closedBracket = keywordParser("]", CLOSED_BRACKET)
   private def colon = keywordParser(":", COLON)
@@ -107,6 +108,7 @@ object Lexer extends RegexParsers {
         | desc
         | ignore
         | size
+        | values
         | int
         | double
         | string

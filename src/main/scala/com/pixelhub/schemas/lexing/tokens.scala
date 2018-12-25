@@ -12,18 +12,19 @@ object tokens {
 
   /* Value keyword */
 
-  case object NULL extends Token
   case object TRUE extends Token
   case object FALSE extends Token
 
   /* Type keywords */
 
+
+  case object NULL extends Token
   case object BOOL_KEYWORD extends Token
   case object INT_KEYWORD extends Token
   case object LONG_KEYWORD extends Token
   case object DOUBLE_KEYWORD extends Token
   case object STRING_KEYWORD extends Token
-  case object BYTE_KEYWORD extends Token
+  case object BYTES_KEYWORD extends Token
   case object ENUM_KEYWORD extends Token
   case object RECORD_KEYWORD extends Token
   case object FIXED_KEYWORD extends Token
