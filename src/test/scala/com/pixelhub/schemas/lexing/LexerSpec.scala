@@ -7,7 +7,7 @@ import org.scalatest.{FlatSpec, Matchers}
 class LexerSpec extends FlatSpec with Matchers {
 
   import LexerSpec._
-  import fixtures._
+  import com.pixelhub.schemas.fixtures._
 
   /* Integers */
 
@@ -49,7 +49,7 @@ class LexerSpec extends FlatSpec with Matchers {
   /* Full tokenizing */
 
   "apply" should "well parse the handshake fixture" in {
-    Lexer(handshake.Source.content) shouldBe Right(handshake.Result.content)
+    Lexer(handshake.Source.content) shouldBe Right(handshake.Tokenized.content)
   }
 
 

@@ -1,4 +1,4 @@
-package com.pixelhub.schemas.lexing.fixtures.handshake
+package com.pixelhub.schemas.fixtures.handshake
 
 case object Source {
 

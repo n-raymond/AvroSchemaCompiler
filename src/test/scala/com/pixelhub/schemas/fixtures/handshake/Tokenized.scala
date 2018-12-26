@@ -1,8 +1,8 @@
-package com.pixelhub.schemas.lexing.fixtures.handshake
+package com.pixelhub.schemas.fixtures.handshake
 
 import com.pixelhub.schemas.lexing.tokens._
 
-case object Result {
+case object Tokenized {
 
   def content: List[Token] = List(
     OPENED_BRACE,
